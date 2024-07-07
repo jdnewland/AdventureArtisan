@@ -9,7 +9,7 @@ body {
 
 .container {
     text-align: center;
-    background: url('https://i.imgur.com/50yAEJz.jpeg') no-repeat center center/cover;
+    background: url('https://i.imgur.com/bM4vB9p.jpg') no-repeat center center/cover;
     padding: 20px;
     padding-left: 40px;
     padding-right: 40px;
@@ -42,7 +42,7 @@ button {
 }
 
 .card {
-    background: url('https://i.imgur.com/bM4vB9p.jpg') no-repeat center center/cover;
+    background: url('https://i.imgur.com/50yAEJz.jpeg') no-repeat center center/cover;
     padding: 15px;
     width: 200px;
     height: 120px;
@@ -93,7 +93,7 @@ button {
 
 #exploration-adventure, #conflict-adventure, #discovery-adventure, #rescue-adventure {
     margin-top: 20px;
-    background: url('https://i.imgur.com/bM4vB9p.jpg') no-repeat center center/cover;
+    background: url('https://i.imgur.com/50yAEJz.jpeg') no-repeat center center/cover;
     padding: 20px;
     border: 2px solid #6b4226;
     border-radius: 10px;

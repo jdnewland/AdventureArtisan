@@ -1,5 +1,3 @@
-// scripts.js
-
 import { characters, goals, locations, obstacles, twists } from './data.js';
 
 function getRandomElement(array) {
@@ -84,4 +82,7 @@ document.getElementById("generate-btn").addEventListener("click", function() {
     document.getElementById("twist-card").innerText = "";
 
     document.getElementById("adventure-prompt").innerText = prompt;
+
+    // Make the cards visible
+    document.getElementById("card-container").style.visibility = "visible";
 });

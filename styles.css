@@ -60,3 +60,9 @@ select {
     color: #6b4226;
     font-size: 14px;
 }
+
+#adventure-prompt {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #6b4226;
+}

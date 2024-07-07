@@ -515,52 +515,111 @@ const twists = [
     "when heroes face their fears"
 ];
 
+const characters = [
+    "a wise old sage", "a treacherous merchant", "a loyal sidekick", "a cunning sorcerer",
+    // ... (other characters)
+];
+
+const goals = [
+    "must retrieve a lost artifact", "need to rescue a captured ally", "are tasked to uncover an ancient secret",
+    // ... (other goals)
+];
+
+const locations = [
+    "in an abandoned castle", "within a bustling underground market", "deep in a mysterious forest",
+    // ... (other locations)
+];
+
+const obstacles = [
+    "guarded by undead warriors", "trapped with deadly puzzles", "hunted by rival adventurers",
+    // ... (other obstacles)
+];
+
+const twists = [
+    "where allies turn into enemies", "as a powerful storm disrupts plans", "when a long-lost mentor reappears",
+    // ... (other twists)
+];
+
 function getRandomElement(array) {
     return array[Math.floor(Math.random() * array.length)];
 }
 
 function generateSimplePrompt() {
-    return `The party ${getRandomElement(goals)} ${getRandomElement(locations)} ${getRandomElement(obstacles)}, aided by ${getRandomElement(characters)}.`;
+    const goal = getRandomElement(goals);
+    const location = getRandomElement(locations);
+    const obstacle = getRandomElement(obstacles);
+    const character = getRandomElement(characters);
+    return {
+        prompt: `The party ${goal} ${location} ${obstacle}, aided by ${character}.`,
+        cards: { character, goal, location, obstacle }
+    };
 }
 
-function generateComplexPrompt() {
-    return `The party, led by ${getRandomElement(characters)}, ${getRandomElement(goals)} ${getRandomElement(locations)} ${getRandomElement(obstacles)}. Unexpectedly, ${getRandomElement(twists)}.`;
+function generateWheelOfDestinyPrompt() {
+    const character1 = getRandomElement(characters);
+    const character2 = getRandomElement(characters);
+    const goal1 = getRandomElement(goals);
+    const goal2 = getRandomElement(goals);
+    const location = getRandomElement(locations);
+    const obstacle1 = getRandomElement(obstacles);
+    const obstacle2 = getRandomElement(obstacles);
+    return {
+        prompt: `The party, led by ${character1} and ${character2}, ${goal1} and ${goal2} ${location}. They face ${obstacle1} and ${obstacle2}.`,
+        cards: { character1, character2, goal1, goal2, location, obstacle1, obstacle2 }
+    };
 }
 
-function generateConflictPrompt() {
-    return `The party ${getRandomElement(goals)} ${getRandomElement(locations)}, where they face ${getRandomElement(obstacles)}. Meanwhile, ${getRandomElement(twists)}.`;
+function generateBattleOfMindsPrompt() {
+    const character1 = getRandomElement(characters);
+    const character2 = getRandomElement(characters);
+    const goal1 = getRandomElement(goals);
+    const goal2 = getRandomElement(goals);
+    const location = getRandomElement(locations);
+    const obstacle = getRandomElement(obstacles);
+    return {
+        prompt: `The party must navigate the conflict between ${character1} who ${goal1} and ${character2} who ${goal2}. Both are heading towards ${location} where they face ${obstacle}.`,
+        cards: { character1, character2, goal1, goal2, location, obstacle }
+    };
 }
 
-function generateSoulPrompt() {
-    return `The party, haunted by ${getRandomElement(characters)}, ${getRandomElement(goals)} ${getRandomElement(locations)}. Along the way, ${getRandomElement(obstacles)} and ${getRandomElement(twists)}.`;
+function generateFracturedSoulPrompt() {
+    const character = getRandomElement(characters);
+    const goal1 = getRandomElement(goals);
+    const goal2 = getRandomElement(goals);
+    const location = getRandomElement(locations);
+    const obstacle = getRandomElement(obstacles);
+    return {
+        prompt: `The party, guided by ${character}, must choose between ${goal1} and ${goal2} ${location}. They face an obstacle ${obstacle} that forces a critical decision.`,
+        cards: { character, goal1, goal2, location, obstacle }
+    };
 }
 
 document.getElementById("generate-btn").addEventListener("click", function() {
     const style = document.getElementById("prompt-style").value;
-    let prompt = "";
+    let result = {};
 
     switch (style) {
         case "complex":
-            prompt = generateComplexPrompt();
+            result = generateWheelOfDestinyPrompt();
             break;
         case "conflict":
-            prompt = generateConflictPrompt();
+            result = generateBattleOfMindsPrompt();
             break;
         case "soul":
-            prompt = generateSoulPrompt();
+            result = generateFracturedSoulPrompt();
             break;
         case "simple":
         default:
-            prompt = generateSimplePrompt();
+            result = generateSimplePrompt();
             break;
     }
 
-    document.getElementById("character-card").innerText = getRandomElement(characters);
-    document.getElementById("goal-card").innerText = getRandomElement(goals);
-    document.getElementById("location-card").innerText = getRandomElement(locations);
-    document.getElementById("obstacle-card").innerText = getRandomElement(obstacles);
-    document.getElementById("twist-card").innerText = getRandomElement(twists);
+    const { prompt, cards } = result;
+    document.getElementById("character-card").innerText = cards.character || `${cards.character1} and ${cards.character2}`;
+    document.getElementById("goal-card").innerText = cards.goal || `${cards.goal1} and ${cards.goal2}`;
+    document.getElementById("location-card").innerText = cards.location;
+    document.getElementById("obstacle-card").innerText = cards.obstacle || `${cards.obstacle1} and ${cards.obstacle2}`;
+    document.getElementById("twist-card").innerText = "";
 
-    // Display the full prompt
     document.getElementById("adventure-prompt").innerText = prompt;
 });

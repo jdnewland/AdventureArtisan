@@ -97,6 +97,8 @@ document.getElementById("generate-btn").addEventListener("click", function() {
     document.getElementById("obstacle-card").innerText = `Obstacle: ${obstacle}`;
     document.getElementById("twist-card").innerText = `Twist: ${twist}`;
 
+    document.getElementById("adventure-prompt").innerText = '';
+
     // Make the cards visible
     document.getElementById("card-container").style.visibility = "visible";
 });

@@ -515,31 +515,6 @@ const twists = [
     "when heroes face their fears"
 ];
 
-const characters = [
-    "a wise old sage", "a treacherous merchant", "a loyal sidekick", "a cunning sorcerer",
-    // ... (other characters)
-];
-
-const goals = [
-    "must retrieve a lost artifact", "need to rescue a captured ally", "are tasked to uncover an ancient secret",
-    // ... (other goals)
-];
-
-const locations = [
-    "in an abandoned castle", "within a bustling underground market", "deep in a mysterious forest",
-    // ... (other locations)
-];
-
-const obstacles = [
-    "guarded by undead warriors", "trapped with deadly puzzles", "hunted by rival adventurers",
-    // ... (other obstacles)
-];
-
-const twists = [
-    "where allies turn into enemies", "as a powerful storm disrupts plans", "when a long-lost mentor reappears",
-    // ... (other twists)
-];
-
 function getRandomElement(array) {
     return array[Math.floor(Math.random() * array.length)];
 }

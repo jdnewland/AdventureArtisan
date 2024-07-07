@@ -595,6 +595,5 @@ document.getElementById("generate-btn").addEventListener("click", function() {
     document.getElementById("location-card").innerText = cards.location;
     document.getElementById("obstacle-card").innerText = cards.obstacle || `${cards.obstacle1} and ${cards.obstacle2}`;
     document.getElementById("twist-card").innerText = "";
-
     document.getElementById("adventure-prompt").innerText = prompt;
 });

@@ -20,7 +20,7 @@ body {
     margin-top: 20px;
 }
 
-h1 {
+h1, h3 {
     color: #6b4226;
 }
 
@@ -58,12 +58,6 @@ button {
     cursor: pointer; /* Indicate clickability */
 }
 
-.about .card {
-    width: auto;
-    height: auto;
-    margin-top: 10px;
-}
-
 .character-card {
     border-color: #ff4d4d;
 }
@@ -95,4 +89,14 @@ button {
 
 .about li {
     margin-bottom: 10px;
+}
+
+#exploration-adventure, #conflict-adventure, #discovery-adventure, #rescue-adventure {
+    margin-top: 20px;
+    background: url('https://i.imgur.com/bM4vB9p.jpg') no-repeat center center/cover;
+    padding: 20px;
+    border: 2px solid #6b4226;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    color: #6b4226;
 }

@@ -26,6 +26,20 @@ function generateSimplePrompt() {
     };
 }
 
+function updateAdventures(result) {
+    const { character, goal, location, obstacle, twist } = result;
+
+    const explorationAdventure = `The adventurers, guided by ${character}, seek to ${goal} in the mysterious ${location}, overcoming ${obstacle}, and are unexpectedly faced with ${twist}.`;
+    const conflictAdventure = `Led by ${character}, the group aims to ${goal} at ${location}, battling through ${obstacle}, only to encounter ${twist} that complicates their mission.`;
+    const discoveryAdventure = `Driven by ${character}, the team strives to ${goal} at the ancient ${location}, navigating ${obstacle}, and uncovering ${twist} that changes their course.`;
+    const rescueAdventure = `${character} leads the charge to ${goal} within the perilous ${location}, overcoming ${obstacle}, while dealing with ${twist} that threatens their success.`;
+
+    document.getElementById("exploration-adventure").innerText = explorationAdventure;
+    document.getElementById("conflict-adventure").innerText = conflictAdventure;
+    document.getElementById("discovery-adventure").innerText = discoveryAdventure;
+    document.getElementById("rescue-adventure").innerText = rescueAdventure;
+}
+
 document.getElementById("generate-btn").addEventListener("click", function() {
     const result = generateSimplePrompt();
     const { character, goal, location, obstacle, twist } = result;
@@ -38,6 +52,9 @@ document.getElementById("generate-btn").addEventListener("click", function() {
 
     // Make the cards visible
     document.getElementById("card-container").style.visibility = "visible";
+
+    // Update the adventure examples
+    updateAdventures(result);
 });
 
 // Add event listeners to each card for re-rolling

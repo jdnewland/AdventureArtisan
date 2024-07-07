@@ -519,10 +519,48 @@ function getRandomElement(array) {
     return array[Math.floor(Math.random() * array.length)];
 }
 
+function generateSimplePrompt() {
+    return `The party ${getRandomElement(goals)} ${getRandomElement(locations)} ${getRandomElement(obstacles)}, aided by ${getRandomElement(characters)}.`;
+}
+
+function generateComplexPrompt() {
+    return `The party, led by ${getRandomElement(characters)}, ${getRandomElement(goals)} ${getRandomElement(locations)} ${getRandomElement(obstacles)}. Unexpectedly, ${getRandomElement(twists)}.`;
+}
+
+function generateConflictPrompt() {
+    return `The party ${getRandomElement(goals)} ${getRandomElement(locations)}, where they face ${getRandomElement(obstacles)}. Meanwhile, ${getRandomElement(twists)}.`;
+}
+
+function generateSoulPrompt() {
+    return `The party, haunted by ${getRandomElement(characters)}, ${getRandomElement(goals)} ${getRandomElement(locations)}. Along the way, ${getRandomElement(obstacles)} and ${getRandomElement(twists)}.`;
+}
+
 document.getElementById("generate-btn").addEventListener("click", function() {
+    const style = document.getElementById("prompt-style").value;
+    let prompt = "";
+
+    switch (style) {
+        case "complex":
+            prompt = generateComplexPrompt();
+            break;
+        case "conflict":
+            prompt = generateConflictPrompt();
+            break;
+        case "soul":
+            prompt = generateSoulPrompt();
+            break;
+        case "simple":
+        default:
+            prompt = generateSimplePrompt();
+            break;
+    }
+
     document.getElementById("character-card").innerText = getRandomElement(characters);
     document.getElementById("goal-card").innerText = getRandomElement(goals);
     document.getElementById("location-card").innerText = getRandomElement(locations);
     document.getElementById("obstacle-card").innerText = getRandomElement(obstacles);
     document.getElementById("twist-card").innerText = getRandomElement(twists);
+
+    // Display the full prompt
+    document.getElementById("adventure-prompt").innerText = prompt;
 });

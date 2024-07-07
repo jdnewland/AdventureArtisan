@@ -9,9 +9,10 @@ function generateSimplePrompt() {
     const location = getRandomElement(locations);
     const obstacle = getRandomElement(obstacles);
     const character = getRandomElement(characters);
+    const twist = getRandomElement(twists);
     return {
-        prompt: `The party ${goal} ${location} ${obstacle}, aided by ${character}.`,
-        cards: { character, goal, location, obstacle, twist: "" }
+       prompt: `The party ${goal} ${location} ${obstacle}, aided by ${character}. ${twist}`,
+        cards: { character, goal, location, obstacle, twist }
     };
 }
 

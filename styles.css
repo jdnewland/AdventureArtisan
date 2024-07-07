@@ -58,6 +58,12 @@ button {
     cursor: pointer; /* Indicate clickability */
 }
 
+.about .card {
+    width: auto;
+    height: auto;
+    margin-top: 10px;
+}
+
 .character-card {
     border-color: #ff4d4d;
 }

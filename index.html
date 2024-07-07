@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventure Artisan</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Adventure Artisan</h1>
+        <select id="prompt-style">
+            <option value="simple">Quest for Glory</option>
+            <option value="wheel">Wheel of Destiny</option>
+            <option value="battle">Battle of Minds</option>
+            <option value="soul">Fractured Soul</option>
+        </select>
+        <button id="generate-btn">Generate Adventure</button>
+        <div class="card-container" id="card-container">
+            <div class="card character-card" id="character-card"></div>
+            <div class="card character-card" id="character-card-2"></div>
+            <div class="card goal-card" id="goal-card"></div>
+            <div class="card goal-card" id="goal-card-2"></div>
+            <div class="card location-card" id="location-card"></div>
+            <div class="card obstacle-card" id="obstacle-card"></div>
+            <div class="card obstacle-card" id="obstacle-card-2"></div>
+            <div class="card twist-card" id="twist-card"></div>
+        </div>
+    </div>
+    <div class="about">
+        <h2>About</h2>
+        <p>Adventure Artisan is a web tool designed to help Dungeon Masters quickly generate engaging D&D adventure prompts. Mix and match character, goal, location, obstacle, and twist cards to create unique adventure scenarios.</p>
+        <h3>Prompt Styles</h3>
+        <ul>
+            <li><strong>Quest for Glory:</strong> A straightforward prompt with one of each card type.</li>
+            <li><strong>Wheel of Destiny:</strong> Two characters with opposing goals affecting each other.</li>
+            <li><strong>Battle of Minds:</strong> Two characters separated by motivations, locations, events, etc.</li>
+            <li><strong>Fractured Soul:</strong> A character choosing between two goals with a significant obstacle.</li>
+        </ul>
+    </div>
+    <script type="module" src="scripts.js"></script>
+</body>
+</html>

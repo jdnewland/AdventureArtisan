@@ -18,6 +18,4 @@ Randomized Elements: Generate prompts using:
 
 How It Works
 
-Select a Prompt Style: Use the dropdown menu to select the type of prompt you want.
 Generate Adventure: Click the "Generate Adventure" button to create a new adventure prompt.
-Read the Prompt: The generated prompt will appear, with the elements displayed as cards.

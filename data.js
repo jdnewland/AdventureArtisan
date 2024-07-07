@@ -1,5 +1,3 @@
-// data.js
-
 export const characters = [
     "a treacherous merchant",
     "a loyal sidekick",

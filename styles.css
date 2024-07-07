@@ -8,13 +8,13 @@ body {
 }
 
 .container, .about {
-    text-align: left;
+    text-align: center;
     background: url('https://i.imgur.com/Qobt9NH.jpg') no-repeat center center/cover;
-    padding: 20px;
+    padding: 80px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    width: 80%;
-    max-width: 800px;
+    width: 50%;
+    max-width: 500px;
     margin-top: 20px;
 }
 

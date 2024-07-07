@@ -9,7 +9,7 @@ body {
 
 .container, .about {
     text-align: left;
-    background: url('https://imgur.com/a/XITSWVa') no-repeat center center/cover;
+    background: url('https://i.imgur.com/bM4vB9p.jpg') no-repeat center center/cover;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -40,7 +40,7 @@ button {
 }
 
 .card {
-    background: url('https://imgur.com/a/XITSWVa') no-repeat center center/cover;
+    background: url('https://i.imgur.com/bM4vB9p.jpg') no-repeat center center/cover;
     padding: 15px;
     width: 200px;
     height: 120px;

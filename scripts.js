@@ -29,10 +29,10 @@ function generateSimplePrompt() {
 function updateAdventures(result) {
     const { character, goal, location, obstacle, twist } = result;
 
-    const explorationAdventure = `The adventurers, guided by ${character}, ${goal} in the mysterious ${location}, overcoming ${obstacle}, and are unexpectedly ${twist}.`;
+    const explorationAdventure = `The adventurers, guided by ${character}, ${goal} in the mysterious ${location}, overcoming ${obstacle}, and unexpectedly ${twist}.`;
     const conflictAdventure = `Led by ${character}, the group ${goal} at a ${location}, battling through ${obstacle}, only to encounter ${twist} that complicates their mission.`;
     const discoveryAdventure = `Driven by ${character}, the team ${goal} at the ancient ${location}, navigating ${obstacle}, and ${twist} that changes their course.`;
-    const rescueAdventure = `${character} ${goal} within the perilous ${location}, overcoming ${obstacle}, while dealing with ${twist} that threatens their success.`;
+    const rescueAdventure = `${character} ${goal} within the perilous ${location}, overcoming ${obstacle}, while ${twist} that threatens their success.`;
 
     document.getElementById("exploration-adventure").innerText = explorationAdventure;
     document.getElementById("conflict-adventure").innerText = conflictAdventure;

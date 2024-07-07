@@ -9,7 +9,7 @@ body {
 
 .container, .about {
     text-align: left;
-    background: url('https://i.imgur.com/bM4vB9p.jpg') no-repeat center center/cover;
+    background: url('https://i.imgur.com/Qobt9NH.jpg') no-repeat center center/cover;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -57,23 +57,23 @@ button {
 }
 
 .character-card {
-    border-color: #ff4d4d;
+    border-color: hsl(0, 47%, 56%);
 }
 
 .goal-card {
-    border-color: #4dff4d;
+    border-color: hwb(120 42% 43%);
 }
 
 .location-card {
-    border-color: #4d4dff;
+    border-color: hwb(240 52% 19%);
 }
 
 .obstacle-card {
-    border-color: #ffff4d;
+    border-color: hwb(60 44% 29%);
 }
 
 .twist-card {
-    border-color: #ff4dff;
+    border-color: hwb(300 50% 31%);
 }
 
 .about h2, .about h3 {

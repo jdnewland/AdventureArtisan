@@ -78,25 +78,12 @@ button {
     border-color: #ff4dff;
 }
 
-.about h2, .about h3 {
-    color: #6b4226;
-}
-
-.about ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.about li {
-    margin-bottom: 10px;
-}
-
-#exploration-adventure, #conflict-adventure, #discovery-adventure, #rescue-adventure {
-    margin-top: 20px;
+.about-card {
     background: url('https://i.imgur.com/bM4vB9p.jpg') no-repeat center center/cover;
     padding: 20px;
     border: 2px solid #6b4226;
     border-radius: 10px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     color: #6b4226;
+    margin-top: 20px;
 }

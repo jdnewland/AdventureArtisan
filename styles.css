@@ -7,9 +7,9 @@ body {
     margin: 0;
 }
 
-.container {
+.container, .about {
     text-align: center;
-    background: url('/path/to/your/parchment-image.jpeg') no-repeat center center/cover;
+    background: url('https://i.imgur.com/Qobt9NH.jpeg') no-repeat center center/cover;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -40,10 +40,10 @@ button {
 }
 
 .card {
-    background: url('/path/to/your/parchment-image.jpeg') no-repeat center center/cover;
+    background: url('https://i.imgur.com/Qobt9NH.jpeg') no-repeat center center/cover;
     padding: 15px;
-    width: 180px;
-    height: 100px;
+    width: 200px;
+    height: 120px;
     border: 2px solid;
     border-radius: 10px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
@@ -74,18 +74,6 @@ button {
 
 .twist-card {
     border-color: #ff4dff;
-}
-
-.about {
-    text-align: left;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    width: 80%;
-    max-width: 800px;
-    margin-top: 20px;
-    color: #6b4226;
 }
 
 .about h2, .about h3 {

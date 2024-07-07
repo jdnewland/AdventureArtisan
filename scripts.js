@@ -74,54 +74,29 @@ function generateFracturedSoulPrompt() {
     };
 }
 
-document.getElementById("generate-btn").addEventListener("click", function() {
-    const style = Math.floor(Math.random() * 4); // Select a random prompt style
-    let result = {};
+function arrangeCards(style) {
+    const cardContainer = document.getElementById('card-container');
+    cardContainer.innerHTML = ''; // Clear the card container
 
     switch (style) {
-        case 1:
-            result = generateWheelOfDestinyPrompt();
+        case 'simple':
+            cardContainer.appendChild(document.getElementById('character-card'));
+            cardContainer.appendChild(document.getElementById('goal-card'));
+            cardContainer.appendChild(document.getElementById('location-card'));
+            cardContainer.appendChild(document.getElementById('obstacle-card'));
+            cardContainer.appendChild(document.getElementById('twist-card'));
             break;
-        case 2:
-            result = generateBattleOfMindsPrompt();
+        case 'wheel':
+            cardContainer.appendChild(document.getElementById('character-card'));
+            cardContainer.appendChild(document.getElementById('character-card-2'));
+            cardContainer.appendChild(document.getElementById('goal-card'));
+            cardContainer.appendChild(document.getElementById('goal-card-2'));
+            cardContainer.appendChild(document.getElementById('location-card'));
+            cardContainer.appendChild(document.getElementById('obstacle-card'));
+            cardContainer.appendChild(document.getElementById('obstacle-card-2'));
+            cardContainer.appendChild(document.getElementById('twist-card'));
             break;
-        case 3:
-            result = generateFracturedSoulPrompt();
-            break;
-        case 0:
-        default:
-            result = generateSimplePrompt();
-            break;
-    }
-
-    const { character, goal, location, obstacle, twist } = result;
-    updateCard("character-card", `Character(s): ${character}`);
-    updateCard("goal-card", `Goal(s): ${goal}`);
-    updateCard("location-card", `Location: ${location}`);
-    updateCard("obstacle-card", `Obstacle: ${obstacle}`);
-    updateCard("twist-card", `Twist: ${twist}`);
-
-    // Make the cards visible
-    document.getElementById("card-container").style.visibility = "visible";
-});
-
-// Add event listeners to each card for re-rolling
-document.getElementById("character-card").addEventListener("click", () => {
-    updateCard("character-card", `Character(s): ${getRandomElement(characters)}`);
-});
-
-document.getElementById("goal-card").addEventListener("click", () => {
-    updateCard("goal-card", `Goal(s): ${getRandomElement(goals)}`);
-});
-
-document.getElementById("location-card").addEventListener("click", () => {
-    updateCard("location-card", `Location: ${getRandomElement(locations)}`);
-});
-
-document.getElementById("obstacle-card").addEventListener("click", () => {
-    updateCard("obstacle-card", `Obstacle: ${getRandomElement(obstacles)}`);
-});
-
-document.getElementById("twist-card").addEventListener("click", () => {
-    updateCard("twist-card", `Twist: ${getRandomElement(twists)}`);
-});
+        case 'battle':
+            cardContainer.appendChild(document.getElementById('character-card'));
+            cardContainer.appendChild(document.getElementById('character-card-2'));
+            cardContainer.appendChild(document.getElement

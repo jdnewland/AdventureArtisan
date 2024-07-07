@@ -71,20 +71,20 @@ function generateFracturedSoulPrompt() {
 }
 
 document.getElementById("generate-btn").addEventListener("click", function() {
-    const style = document.getElementById("prompt-style").value;
+    const style = Math.floor(Math.random() * 4); // Select a random prompt style
     let result = {};
 
     switch (style) {
-        case "complex":
+        case 1:
             result = generateWheelOfDestinyPrompt();
             break;
-        case "conflict":
+        case 2:
             result = generateBattleOfMindsPrompt();
             break;
-        case "soul":
+        case 3:
             result = generateFracturedSoulPrompt();
             break;
-        case "simple":
+        case 0:
         default:
             result = generateSimplePrompt();
             break;
@@ -96,8 +96,6 @@ document.getElementById("generate-btn").addEventListener("click", function() {
     document.getElementById("location-card").innerText = `Location: ${location}`;
     document.getElementById("obstacle-card").innerText = `Obstacle: ${obstacle}`;
     document.getElementById("twist-card").innerText = `Twist: ${twist}`;
-
-    document.getElementById("adventure-prompt").innerText = '';
 
     // Make the cards visible
     document.getElementById("card-container").style.visibility = "visible";

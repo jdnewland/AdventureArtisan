@@ -4,6 +4,10 @@ function getRandomElement(array) {
     return array[Math.floor(Math.random() * array.length)];
 }
 
+function updateCard(cardId, content) {
+    document.getElementById(cardId).innerText = content;
+}
+
 function generateSimplePrompt() {
     const goal = getRandomElement(goals);
     const location = getRandomElement(locations);
@@ -91,12 +95,33 @@ document.getElementById("generate-btn").addEventListener("click", function() {
     }
 
     const { character, goal, location, obstacle, twist } = result;
-    document.getElementById("character-card").innerText = `Character(s): ${character}`;
-    document.getElementById("goal-card").innerText = `Goal(s): ${goal}`;
-    document.getElementById("location-card").innerText = `Location: ${location}`;
-    document.getElementById("obstacle-card").innerText = `Obstacle: ${obstacle}`;
-    document.getElementById("twist-card").innerText = `Twist: ${twist}`;
+    updateCard("character-card", `Character(s): ${character}`);
+    updateCard("goal-card", `Goal(s): ${goal}`);
+    updateCard("location-card", `Location: ${location}`);
+    updateCard("obstacle-card", `Obstacle: ${obstacle}`);
+    updateCard("twist-card", `Twist: ${twist}`);
 
     // Make the cards visible
     document.getElementById("card-container").style.visibility = "visible";
+});
+
+// Add event listeners to each card for re-rolling
+document.getElementById("character-card").addEventListener("click", () => {
+    updateCard("character-card", `Character(s): ${getRandomElement(characters)}`);
+});
+
+document.getElementById("goal-card").addEventListener("click", () => {
+    updateCard("goal-card", `Goal(s): ${getRandomElement(goals)}`);
+});
+
+document.getElementById("location-card").addEventListener("click", () => {
+    updateCard("location-card", `Location: ${getRandomElement(locations)}`);
+});
+
+document.getElementById("obstacle-card").addEventListener("click", () => {
+    updateCard("obstacle-card", `Obstacle: ${getRandomElement(obstacles)}`);
+});
+
+document.getElementById("twist-card").addEventListener("click", () => {
+    updateCard("twist-card", `Twist: ${getRandomElement(twists)}`);
 });

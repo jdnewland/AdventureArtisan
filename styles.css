@@ -58,14 +58,6 @@ button {
     border-radius: 5px;
 }
 
-select {
-    padding: 10px;
-    font-size: 16px;
-    margin-top: 20px;
-    border: 1px solid #6b4226;
-    border-radius: 5px;
-}
-
 .card-container {
     display: flex;
     justify-content: space-around;
@@ -89,8 +81,22 @@ select {
     font-size: 14px;
 }
 
-#adventure-prompt {
-    margin-top: 20px;
-    font-size: 18px;
-    color: #6b4226;
+.character-card {
+    background-color: #ffdddd;
+}
+
+.goal-card {
+    background-color: #ddffdd;
+}
+
+.location-card {
+    background-color: #ddddff;
+}
+
+.obstacle-card {
+    background-color: #ffffdd;
+}
+
+.twist-card {
+    background-color: #ffddff;
 }

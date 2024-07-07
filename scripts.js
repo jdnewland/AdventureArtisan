@@ -59,21 +59,31 @@ document.getElementById("generate-btn").addEventListener("click", function() {
 
 // Add event listeners to each card for re-rolling
 document.getElementById("character-card").addEventListener("click", () => {
-    updateCard("character-card", `Character: ${getRandomElement(characters)}`);
+    const character = getRandomElement(characters);
+    updateCard("character-card", `Character: ${character}`);
+    updateAdventures(generateSimplePrompt());
 });
 
 document.getElementById("goal-card").addEventListener("click", () => {
-    updateCard("goal-card", `Goal: ${getRandomElement(goals)}`);
+    const goal = getRandomElement(goals);
+    updateCard("goal-card", `Goal: ${goal}`);
+    updateAdventures(generateSimplePrompt());
 });
 
 document.getElementById("location-card").addEventListener("click", () => {
-    updateCard("location-card", `Location: ${getRandomElement(locations)}`);
+    const location = getRandomElement(locations);
+    updateCard("location-card", `Location: ${location}`);
+    updateAdventures(generateSimplePrompt());
 });
 
 document.getElementById("obstacle-card").addEventListener("click", () => {
-    updateCard("obstacle-card", `Obstacle: ${getRandomElement(obstacles)}`);
+    const obstacle = getRandomElement(obstacles);
+    updateCard("obstacle-card", `Obstacle: ${obstacle}`);
+    updateAdventures(generateSimplePrompt());
 });
 
 document.getElementById("twist-card").addEventListener("click", () => {
-    updateCard("twist-card", `Twist: ${getRandomElement(twists)}`);
+    const twist = getRandomElement(twists);
+    updateCard("twist-card", `Twist: ${twist}`);
+    updateAdventures(generateSimplePrompt());
 });

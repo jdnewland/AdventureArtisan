@@ -11,8 +11,11 @@ function generateSimplePrompt() {
     const character = getRandomElement(characters);
     const twist = getRandomElement(twists);
     return {
-        prompt: `The party, aided by ${character}, ${goal} ${location} but must overcome ${obstacle}. And then ${twist}.`,
-        cards: { character, goal, location, obstacle, twist }
+        character,
+        goal,
+        location,
+        obstacle,
+        twist
     };
 }
 
@@ -26,8 +29,11 @@ function generateWheelOfDestinyPrompt() {
     const obstacle2 = getRandomElement(obstacles);
     const twist = getRandomElement(twists);
     return {
-        prompt: `The party, led by ${character1} and ${character2}, embarks on a mission to ${goal1} and ${goal2} ${location}. They must face ${obstacle1} and ${obstacle2}. And then ${twist}.`,
-        cards: { character: `${character1} and ${character2}`, goal: `${goal1} and ${goal2}`, location, obstacle: `${obstacle1} and ${obstacle2}`, twist }
+        character: `${character1} and ${character2}`,
+        goal: `${goal1} and ${goal2}`,
+        location,
+        obstacle: `${obstacle1} and ${obstacle2}`,
+        twist
     };
 }
 
@@ -40,8 +46,11 @@ function generateBattleOfMindsPrompt() {
     const obstacle = getRandomElement(obstacles);
     const twist = getRandomElement(twists);
     return {
-        prompt: `The party finds themselves caught between ${character1}, who ${goal1}, and ${character2}, who ${goal2}. Both are heading towards ${location}, where they must deal with ${obstacle}. And then ${twist}.`,
-        cards: { character: `${character1} and ${character2}`, goal: `${goal1} and ${goal2}`, location, obstacle, twist }
+        character: `${character1} vs ${character2}`,
+        goal: `${goal1} vs ${goal2}`,
+        location,
+        obstacle,
+        twist
     };
 }
 
@@ -53,8 +62,11 @@ function generateFracturedSoulPrompt() {
     const obstacle = getRandomElement(obstacles);
     const twist = getRandomElement(twists);
     return {
-        prompt: `The party, guided by ${character}, must choose between ${goal1} and ${goal2} ${location}. They face ${obstacle} that forces a critical decision. And then ${twist}.`,
-        cards: { character, goal: `${goal1} and ${goal2}`, location, obstacle, twist }
+        character,
+        goal: `${goal1} or ${goal2}`,
+        location,
+        obstacle,
+        twist
     };
 }
 
@@ -78,14 +90,12 @@ document.getElementById("generate-btn").addEventListener("click", function() {
             break;
     }
 
-    const { prompt, cards } = result;
-    document.getElementById("character-card").innerText = cards.character;
-    document.getElementById("goal-card").innerText = cards.goal;
-    document.getElementById("location-card").innerText = cards.location;
-    document.getElementById("obstacle-card").innerText = cards.obstacle;
-    document.getElementById("twist-card").innerText = cards.twist;
-
-    document.getElementById("adventure-prompt").innerText = prompt;
+    const { character, goal, location, obstacle, twist } = result;
+    document.getElementById("character-card").innerText = `Character(s): ${character}`;
+    document.getElementById("goal-card").innerText = `Goal(s): ${goal}`;
+    document.getElementById("location-card").innerText = `Location: ${location}`;
+    document.getElementById("obstacle-card").innerText = `Obstacle: ${obstacle}`;
+    document.getElementById("twist-card").innerText = `Twist: ${twist}`;
 
     // Make the cards visible
     document.getElementById("card-container").style.visibility = "visible";

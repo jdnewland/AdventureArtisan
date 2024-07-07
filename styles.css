@@ -7,14 +7,16 @@ body {
     margin: 0;
 }
 
-.container, .about {
+.container {
     text-align: center;
     background: url('https://i.imgur.com/Qobt9NH.jpg') no-repeat center center/cover;
-    padding: 80px;
+    padding: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    width: 50%;
-    max-width: 500px;
+    width: 80%;
+    max-width: 800px;
     margin-top: 20px;
 }
 
@@ -57,23 +59,23 @@ button {
 }
 
 .character-card {
-    border-color: hsl(0, 47%, 56%);
+    border-color: #ff4d4d;
 }
 
 .goal-card {
-    border-color: hwb(120 42% 43%);
+    border-color: #4dff4d;
 }
 
 .location-card {
-    border-color: hwb(240 52% 19%);
+    border-color: #4d4dff;
 }
 
 .obstacle-card {
-    border-color: hwb(60 44% 29%);
+    border-color: #ffff4d;
 }
 
 .twist-card {
-    border-color: hwb(300 50% 31%);
+    border-color: #ff4dff;
 }
 
 .about h2, .about h3 {
